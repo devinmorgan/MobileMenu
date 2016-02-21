@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Title of the document</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no">
+		<link rel="stylesheet" type="text/css" href="PatronCSS/NavbarAndUpperScreen.css">
+		<link rel="stylesheet" type="text/css" href="PatronCSS/Modals.css">
+		<link rel="stylesheet" type="text/css" href="PatronCSS/ImageViews.css">
+		<link rel="stylesheet" type="text/css" href="PatronCSS/PriorityAndGeneric.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="PatronJS/Patron.js"></script>
+		<script src="PatronJS/BrowseFoods.js"></script>
+		<script src="PatronJS/Modal.js"></script>
+		<script src="PatronJS/InterestList.js"></script>
+		<script src="PatronJS/SingleImageView.js"></script>
+		<script src="PatronJS/NavbarHeadersDDMenus.js"></script>
+	</head>
+	<body onload="onBodyLoad()" onmousedown="startSwipeEvent(event)">
+		<div id="navbar">
+			<div id="upper_navbar">
+				<div class="nav_menu_icon" onclick="toggleNavMenu()">
+					<div class="nav_icon_lines"></div>
+					<div class="nav_icon_lines"></div>
+					<div class="nav_icon_lines"></div>
+				</div>
+				<ul class="drop_down_menu navigation_menu">
+				    <li class="dd_menu_option" onclick="showCategoriesList()">
+				        Browse Foods
+				    </li>
+				    <li class="dd_menu_option" onclick="showInterestList()">
+				        My Interest List
+				    </li>
+				    <li class="dd_menu_option" onclick="showSearchForFoodModal()">
+						Search for a Food
+				    </li>
+				    <li class="dd_menu_option">
+				        <a href="http://mobilemenu.org/Homepage.html">Change Restaurant</a>
+				    </li>
+				    <li class="dd_menu_option">
+						Give Us Feedback!
+				    </li>
+				</ul>
+				<div class="categories_icon" onclick="toggleCategoriesMenu()">i</div>
+				<ul class="drop_down_menu categories_menu">
+				</ul>
+				<h1 id="restaurant_header" class="centered">Restaurant Name</h1>
+			</div>
+			
+		</div>
+		<!-- MODAL FOR SHARE LINK start -->
+		<div class="modal_overlay share_link" onclick="hideShareFoodModal(this,event)">
+			<div class="modal_body share_link">
+				<!-- <div class="modal_header share_link"></div> -->
+				<div id="share_food_name">Food Name</div>
+				<input id="share_link_input" type="text" value="http://www.mobilemenu.com?food_identifier=Rak93kfa3i" />
+				<div class="modal_footer share_link">*Paste this link in an email, text message, etc. to take your friends directly to this food*</div>
+
+			</div>
+		</div>
+		<!-- MODAL FOR SHARE LINK end -->
+
+		<!-- MODAL FOR SURVEY start -->
+		<div class="modal_overlay food_survey hide" >
+		    <div id="food_survey_wrapper">
+		        <div id="skip_survey_btn" onclick="hideSurveyModal()">
+		        	<!-- <div class="forward slash"></div>
+		        	<div class="backward slash"></div> -->
+		        	No thanks
+		        </div>
+		        <h2 class="patron_response survey_header">Quick Survey!</h2>
+		        <p class="patron_response survey_greeting">
+		           Help Restaurant Name improve their products by providing some feedback about the item you just saw.
+		        </p>
+		        <!-- <div id="view_food_link" onclick="viewFoodFromSurveyModal()">
+		        	Click to view food again
+		        </div> -->
+		        <div id="survey_fieldset_wrapper">
+			        <fieldset class="patron_response single_response fieldset">
+			            <div>
+			                <span class="patron_response single_response question_type_label">
+			                    Question 1
+			                    <span class="fieldset_required_marker">*</span>
+			                </span>
+			            </div>
+			            <div class="patron_response single_response content">        
+			                <label class="patron_response single_response label" for="id1">
+			                    <input type="radio" id="id1" name="id" data-answer-identifier="" class="patron_response single_response input"/>Choice 1
+			                </label>
+			                <label class="patron_response single_response label" for="id2">
+			                    <input type="radio" id="id2" name="id" data-answer-identifier="" class="patron_response single_response input"/>Choice 2
+			                </label>
+			            </div>
+			        </fieldset>
+
+			        <fieldset class="patron_response all_that_apply fieldset">
+			            <div>
+			                <span class="patron_response all_that_apply question_type_label">
+			                    Question 2
+			                    <span class="fieldset_required_marker">*</span>
+			                </span>
+			            </div>
+			            <div class="patron_response all_that_apply content">        
+			                <label class="patron_response all_that_apply label" for="id3">
+			                    <input type="checkbox" id="id3" data-answer-identifier="" class="patron_response all_that_apply input"/>Choice 3
+			                </label>
+			                <label class="patron_response all_that_apply label" for="id4">
+			                    <input type="checkbox" id="id4" data-answer-identifier="" class="patron_response all_that_apply input"/>Choice 4
+			                </label>
+			            </div>
+			        </fieldset>
+			      
+			        <fieldset class="patron_response custom_response fieldset">
+			            <div>
+			                <span class="patron_response custom_response question_type_label">
+			                    Other comments or concerns?
+			                    <span class="fieldset_required_marker">*</span>
+			                </span>
+			            </div>
+			            <div class="patron_response custom_response content">
+			                <textarea class="patron_response custom_response textarea" data-answer-identifier="" ></textarea>
+			            </div>
+			        </fieldset>
+			    </div>
+		        <div id="submit_survey_btn" onclick="collectAndSendSurveyData()">Send Feedback</div>
+		    </div>
+		</div>
+		<!-- MODAL FOR SURVEY end -->
+		
+		<!-- MODAL FOR SEARCH start -->
+		<div class="modal_overlay food_search hide" onclick="hideSearchForFoodModal(this,event)">
+			<div class="food_search wrapper">
+				<input class="food_search" type="text" onkeyup="populateSearchResultsFromQuery(this)"/>
+				<ul class="food_search">
+					<li class="food_search">Example Food Name</li>
+					<li class="food_search">Example Food Name</li>
+					<li class="food_search">Example Food Name</li>
+					<li class="food_search">Example Food Name</li>
+
+				</ul>
+			</div>
+		</div>
+		<!-- MODAL FOR SEARCH end -->
+
+		<!-- MULTI IMG VIEW start -->
+		<div id="multi_img_view" class="patron_tab" data-showing-foods-from="interests">
+		</div>
+		<!-- MULTI IMG VIEW end -->
+
+		<!-- SINGLE IMG VIEW start-->
+		<div id="single_img_view" onclick="processNavigationClick(this,event)" class="patron_tab hide" >
+			<div id="single_img_view_header" class="header">
+				<span class="header_title">Category Name</span>
+				<div class="category_talley">Seen 6 of 23</div>
+			</div>
+			<div class="item_contents">
+				<div class="quit_single_img_view fade_out" onclick="returnToMultiImgView()" >Back to feed</div>
+
+				<div class="upper_item_wrapper" onclick="interpretPictureClick(this,event)">
+					<div class="tap_below_instructions fade_out" >(Click below to view more details)</div>
+					<img class="nav_arrows left_nav_arrow fade_out" src="Images/left_nav_arrow.png" alt="Left Navigation Arrow"/>
+					<img class="nav_arrow right_nav_arrow fade_out" src="Images/right_nav_arrow.png" alt="Right Navigation Arrow"/>
+					<span class="center_img_helper"></span>
+			    	<img class="food_item_img" src="//s3-media2.fl.yelpcdn.com/bphoto/2KaZ-o2tbxfGhV2uPMLjCg/348s.jpg" />
+				</div>
+
+				<div class="lower_item_wrapper" ontransitionend="noLongerMoving()" onclick="tapOnDetails(this)" style="">
+					<div class="item_details_component">
+						<h4 class="food_title_header">Food Title</h4>
+				        <p class="food_item_details_p information">The Details part can be a sensual description of the food or it could provide insight into the foods ingredients</p>
+				    </div>
+				    <div class="item_details_component served_with">
+				        <!-- <h4 class="food_item_details_header served_with">Served With</h4> -->
+				        <ul class="food_item_info_ul served_with information">
+				            <li class="food_item_info_li served_with">
+				              <span class="food_item_instruction served_with">Choose 1 from:</span> Country Potatoes, Hash Browns, O'Brien Potatoes, Fresh Fruit, Cottage Cheese, Three Slices of Tomato or Pinapple
+				            </li>
+				       </ul>
+				   </div>
+				    <div class="item_details_component portions_and_price">
+				        <!-- <h4 class="food_item_details_header portions_and_price">Portions and Prices</h4> -->
+				         <ul class="food_item_info_ul portions_and_price information">
+				            <li class="food_item_info_li portions_and_price">
+				              <span class="food_item_info_span_L portions_and_price">Cheese</span>
+				              <span class="food_item_info_span_R portions_and_price">$8.99</span>
+				            </li>
+				            <li class="food_item_info_li portions_and_price">
+				                <span class="food_item_info_span_L portions_and_price">1 Topping</span>
+				                <span class="food_item_info_span_R portions_and_price">$9.99</span>
+				            </li>
+				             <li class="food_item_info_li portions_and_price">
+				                <span class="food_item_info_span_L portions_and_price">2 Topping</span>
+				                <span class="food_item_info_span_R portions_and_price">$10.99</span>
+				            </li>
+				        </ul>
+				    </div>
+				    <div class="item_details_component substitutions_and_extras">
+				        <!-- <h4 class="food_item_details_header substitutions_and_extras">Substitutions &amp; Extras</h4> -->
+				        <ul class="food_item_info_ul substitutions_and_extras information">
+				            <li class="food_item_info_li substitutions_and_extras">
+				                <span class="food_item_info_span_L substitutions_and_extras">Extra Cheese</span>
+				                <span class="food_item_info_span_R substitutions_and_extras">+$2.00</span>
+				            </li>
+				            <li class="food_item_info_li substitutions_and_extras">
+				                <span class="food_item_info_span_L substitutions_and_extras">Add Side Salad</span>
+				                <span class="food_item_info_span_R substitutions_and_extras">+$3.99</span>
+				            </li>
+				        </ul>
+				    </div>
+			    </div>
+			    <div id="interested_in_food_wrapper">
+			    	<div id="add_to_list" class="single_view_btns" onclick="addFoodToInterestList()" >
+			    		<div class="centered">+ Add To Interests</div>
+			    	</div>
+			    	<div id="remove_from_list" class="single_view_btns hide" onclick="removeFromInterestList()" >
+			    		<div class="centered">Remove From Interests</div>
+			    	</div>
+			    	<div id="sharable_link" class="single_view_btns" onclick="getShareableLink()">
+			    		<div class="centered">Share Food</div>
+			    	</div>
+			    </div>
+			</div>
+		    
+		    
+		</div>
+		<!-- SINGLE VIEW end-->
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

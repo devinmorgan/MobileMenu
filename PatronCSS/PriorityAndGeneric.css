@@ -1,0 +1,76 @@
+*{
+  margin: 0px 0px 0px 0px;
+  text-decoration: none;
+  color: rgb(236, 236, 236);
+  font-family: helvetica;
+  list-style-type: none;
+  padding:0px 0px 0px 0px;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -o-box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  box-sizing:border-box;
+}
+body {
+  background-color: rgb(34, 34, 32);
+}
+
+/* DEFAULT IS MOBILE (*/
+
+ h3 {
+    font-size: 24px;
+}
+h4 {
+  font-size: 20px;
+}
+p, li, li span {
+  font-size: 16px;
+}
+
+/*                     MEDIA QUERIES                                        */
+@media only screen and (min-width: 650px) {
+  body {
+    background-color: rgb(234, 234, 234);
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .food_section_img_list {
+      -webkit-column-count: 4;
+      -moz-column-count: 4;
+      -o-column-count: 4;
+      -ms-column-count: 4;
+      column-count: 4;
+    }
+
+}
+
+
+/*                    PRIORITY AND GENERERIC CSS ATTRIBUTES               */
+.centered{
+  height: 100%;
+}
+.centered:before{
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.current_nav_location{
+  background-color: rgb(95, 95, 95);
+}
+.adjusted_list{
+  margin: 40px 0px 0px 0px;
+}
+.show{
+  display: block !important;
+}
+.hide{
+  display: none !important;
+}
+#multi_img_view [class*="selected_type_"] img{
+  opacity: 1;
+}
+#multi_img_view [class*="selected_type_"] div {
+  opacity: 1;
+}

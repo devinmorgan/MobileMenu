@@ -1,0 +1,114 @@
+/*-------------------------------------------------------------------------------------*/
+/* ---------------------------- Symbols, Glyphs, and Icons-----------------------------*/
+.directory_triangle1{
+    position: relative;
+    left: 10px;
+    display: inline-block;
+    border-left: 7px solid rgb(249,249,249);
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-radius: 50%;
+}
+.directory_triangle2{
+     border-left: 7px solid black;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    display: inline-block;
+    border-radius: 50%;
+}
+.path_new_food_li div[class*="fork_tong"]{
+    width: 1px;
+    height: 3px;
+    background-color: rgb(255,255,255);
+    margin-left: -1px;
+    margin-right: -2px;
+    position: relative;
+    left: 6px;
+    display: inline-block;
+    top: 5px;
+}
+.new_food_icon{
+    position: relative;
+    width: 14px;
+    height: 17px;
+    display: inline-block;
+    background-color: rgb(150,150,150);
+    top: 4px;
+    right: 1px;
+}
+.fork_container{
+    position: absolute;
+    top: -19px;
+    left: 1px;
+}
+.knife_container{
+    position: absolute;
+    left: 9px;
+    top: 3px;
+}
+.menu_icon_container{
+    background-color: rgb(150,150,150);
+    width: 16px;
+    height: 21px;
+    display: inline-block;
+    position: relative;
+    top: 7px;
+}
+.pseudo_content{
+    margin: 0px 0px 2px 3px;
+    width: 10px;
+    height: 1px;
+    background-color: white;
+    position: relative;
+    top: 4px;
+}
+.create_new_option div[class*="fork_tong"]{
+    width: 1px;
+    height: 3px;
+    background-color: rgb(255,255,255);
+    margin-left: -1px;
+    margin-right: -2px;
+    position: relative;
+    left: 2px;
+    display: inline-block;
+    top: 4px;
+}
+.remove_right_sidebar_li{
+ position: absolute;
+    top: 7px;
+    width: 12px;
+    right: 15px;
+    height: 15px;
+    display: inline-block;
+}
+.forward.slash{
+  position: absolute;
+    top: 5px;
+    right: 0px;
+    width: 15px;
+    height: 2px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.backward.slash{
+  position: absolute;
+    top: 5px;
+    right: 0px;
+    width: 15px;
+    height: 2px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.slash{
+    background-color: rgb(200, 200, 200);
+}
+.remove_right_sidebar_li:hover .slash{
+    /*cursor:pointer;*/
+    background-color: rgb(0,0,0);
+}

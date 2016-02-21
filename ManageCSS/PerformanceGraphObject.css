@@ -1,0 +1,140 @@
+
+/* ----------- performance graph start ----------- */
+
+.performance.axis_elements{
+	stroke: rgb(120, 120, 120);
+    stroke-width: 2px;
+}
+.performance.large_hash_path.left{
+	marker-start: url(#large_left_hash_marker);
+}
+.performance.large_hash_path.right{
+	marker-end: url(#large_right_hash_marker);
+}
+.performance.large_increment_label.left{
+	text-anchor:end;
+	font-size: 12px;
+}
+.performance.large_increment_label.right{
+	text-anchor:start;
+	font-size: 12px;
+}
+.performance.small_hash_path.left{
+	marker-start: url(#small_left_hash_marker);
+}
+.performance.small_hash_path.right{
+	marker-start: url(#small_right_hash_marker);
+}
+.performance.small_increment_line{
+	stroke: rgb(200, 200, 200);
+    stroke-width: 1px;
+}
+.performance.large_increment_line{
+	stroke: rgb(120, 120, 120);
+   	stroke-width: 2px;
+}
+.performance.grey_response_background {
+    fill: rgb(242, 242, 242);
+    stroke-width: 0px;
+}
+.performance.white_response_background{
+	fill: white;
+	stroke-dasharray: 80,50;
+    stroke-width: 0px;
+}
+.performance.grey_response_background{
+	stroke: rgb(175, 175, 175);
+}
+.performance.white_response_background {
+	stroke: rgb(175, 175, 175);
+}
+g.performance.data_point{
+	cursor: pointer;
+}
+
+.performance.value_text{
+	font-size: 12px;
+	display: none;
+	text-anchor: middle;
+}
+rect.performance.data_values{
+	fill: rgb(168, 217, 152);
+    stroke-width: 2px;
+    stroke: rgb(80, 165, 71);
+	display: none;
+}
+.dot.interest_count{
+	fill: purple;
+	stroke-width: 1px;
+    stroke: purple;
+}
+.dot.view_count{
+	fill: orange;
+	stroke-width: 1px;
+	stroke: orange;
+}
+g.performance.data_point:hover .dot{
+	stroke-width: 5px;
+}
+g.performance.data_point:hover .value_text{
+	display: block;
+}
+g.performance.data_point:hover rect.data_values{
+	display: block;
+}
+path.performance.interest_count{
+	fill: none;
+	stroke-width: 1px;
+	stroke: purple;
+}
+path.performance.view_count{
+	fill: none;
+	stroke-width: 1px;
+	stroke: orange;
+}
+.performance.left_border{
+    fill:rgb(120, 120, 120);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------- performance graph end ----------- */

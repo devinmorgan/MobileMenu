@@ -1,0 +1,625 @@
+/* --------------------- start Right Side Info Bar --------------------- */
+
+#right_sidebar_resize_pillar{
+    width: 1px;
+    height: 100%;
+    position: fixed;
+    background-color: rgb(225, 225, 225);
+    top: 44px;
+    border-right: 5px solid #F9F9F9;
+    border-left: 5px solid #F0F0F0;
+    z-index: 1;
+}
+#right_sidebar_resize_pillar:hover{
+    cursor: col-resize;
+}
+#right_sidebar_wrapper{
+    height: 100%;
+    background-color: rgb(249,249,249);
+    position: fixed;
+    right: 0px;
+    top: 44px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 1;
+}
+#right_sidebar_header{
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid rgb(228, 228, 228);
+    color: rgb(110, 110, 110);
+    min-height: 21px;
+}
+.right_sidebar_tab_wrapper{
+    height: -webkit-Calc(100% - 40px);
+    height: -moz-Calc(100% - 40px);
+    height: -o-Calc(100% - 40px);
+    height: -ms-Calc(100% - 40px);
+    height: Calc(100% - 40px);
+    overflow-y: scroll;
+}
+.right_sidebar_tab_header{
+    width: -webkit-Calc(33% - 3px);
+    width: -moz-Calc(33% - 3px);
+    width: -o-Calc(33% - 3px);
+    width: -ms-Calc(33% - 3px);
+    width: Calc(33% - 3px);
+    display: inline-block;
+    text-align: center;
+    margin: 0px 0px 10px 0px;
+    padding: 8px 0px;
+    border-top: 4px solid transparent;
+    font-size: 14px;
+    color: rgb(115, 115, 115);
+}
+.right_sidebar_tab_header:hover{
+    border-bottom: 4px solid rgb(117, 117, 117);
+    width: -webkit-Calc(33% - 13px);
+    width: -moz-Calc(33% - 13px);
+    width: -o-Calc(33% - 13px);
+    width: -ms-Calc(33% - 13px);
+    width: Calc(33% - 13px);
+    margin: 0px 5px 10px 5px;
+    padding: 8px 0px 8px 0px;
+    cursor: pointer;
+}
+.right_sidebar_container{
+    overflow-y: scroll;
+    padding: 10px;
+    height: Calc(100% - 100px);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* --------------------- end Right Side Info Bar --------------------- */
+/* --------------------- start Details Tab --------------------- */
+#right_sidebar_image_wrapper{
+   margin: 15px 0px 15px 0px;
+}
+#right_sidebar_image_wrapper img{
+    max-width: 280px;
+    max-height: 280px;
+    margin: 0px auto 0px auto;
+    display: block;
+}
+.label_field_wrapper{
+    font-size: 14px;
+    line-height: 18px;
+    margin: 10px auto 0px auto;
+}
+.right_sidebar_label{
+    line-height: 25px;
+    font-size: 13px;
+    color: rgb(110, 110, 110);
+    text-align: center;
+    width: 100px;
+    display: inline-block;
+}
+.right_sidebar_input{
+    width: -webkit-Calc(100% - 115px);
+    width: -moz-Calc(100% - 115px);
+    width: -o-Calc(100% - 115px);
+    width: -ms-Calc(100% - 115px);
+    width: Calc(100% - 115px);
+    float: right;
+}
+.right_sidebar_textarea{
+    width: -webkit-Calc(100% - 25px);
+    width: -moz-Calc(100% - 25px);
+    width: -o-Calc(100% - 25px);
+    width: -ms-Calc(100% - 25px);
+    width: Calc(100% - 25px);
+    height: 100px;
+    font-size: 13px;
+    resize: vertical;
+    color: rgb(0,0,0);
+    margin: 0px 18px;
+    display: block;
+}
+.time_served_select{
+   margin: 3px 7px 0px 0px;
+    float: right;
+    width: -webkit-Calc(50% - 60px);
+    width: -moz-Calc(50% - 60px);
+    width: -o-Calc(50% - 60px);
+    width: -ms-Calc(50% - 60px);
+    width: Calc(50% - 60px);
+}
+.food_type_select{
+    float: right;
+    width: -webkit-Calc(100% - 106px);
+    width: -moz-Calc(100% - 106px);
+    width: -o-Calc(100% - 106px);
+    width: -ms-Calc(100% - 106px);
+    width: Calc(100% - 106px);
+    margin: 4px 0px 0px 0px;
+}
+.dd_menu_and_btn_wrapper{
+    position: relative;
+    width: 160px;
+    margin: auto;
+}
+.right_sidebar_options_dd{
+    width: 158px;
+    padding: 10px 0px 10px 0px;
+    background: rgb(255,255,255);
+    border: 1px solid rgb(200, 200, 200);
+    font-size: 13px;
+    margin: auto;
+    position: absolute;
+    bottom: 40px;
+    left: 0px;
+}
+.right_sidebar_options_btn{
+    width: 160px;
+    height: 40px;
+    margin: 0px auto 0px auto;
+    text-align: center;
+    font-size: 15px;
+    line-height: 40px;
+    background-color: rgb(0,149,255);
+    color: white;
+}
+.right_sidebar_options_btn:hover{
+    cursor: pointer;
+}
+#photo_upload_form{
+    position: fixed;
+    top:-100px;
+    left:-100px; /* if this doesn't work try display none */
+}
+/* --------------------- end Details Tab --------------------- */
+
+/* --------------------- start Served With --------------------- */
+#served_with_wrapper{
+   margin: 15px auto 15px auto;
+}
+#served_with_header {
+   text-align: center;
+    font-size: 16px;
+    margin: 0px auto 10px auto;
+    padding: 10px 0px 0px 0px;
+    border-top: 1px solid rgb(225, 225, 225);
+    color: rgb(110, 110, 110);
+}
+
+.instructions_li{
+    margin: 0px 0px 10px 0px;
+}
+.right_sidebar_li_label{
+  line-height: 25px;
+    font-size: 13px;
+    color: rgb(115, 115, 115);
+}
+.instruction_input{
+    width: -webkit-Calc(100% - 70px);
+    width: -moz-Calc(100% - 70px);
+    width: -o-Calc(100% - 70px);
+    width: -ms-Calc(100% - 70px);
+    width:  Calc(100% - 70px);
+    margin: 0px 0px 0px -2px;
+}
+.options_li{
+     margin: 0px 0px 0px 20px;
+}
+.options_input {
+    width: -webkit-Calc(100% - 50px);
+    width: -moz-Calc(100% - 50px);
+    width: -o-Calc(100% - 50px);
+    width: -ms-Calc(100% - 50px);
+    width: Calc(100% - 50px);
+    margin: 3px 0px 0px 0px;
+}
+.new_option_explanation{
+    font-size:10px;
+    text-align:center;
+}
+.create_new_right_sidebar{
+    width: 230px;
+    text-align: center;
+    padding: 5px 0px 5px 0px;
+    color: rgb(127, 127, 127);
+    border: 1px solid rgb(200,200,200);
+    font-weight: 100;
+    margin: 10px auto 0px auto;
+  }
+.create_new_right_sidebar:hover{
+    border: 1px solid rgb(0,0,0);
+    color: rgb(0,0,0);
+    cursor: pointer;
+}
+/* --------------------- end Served With --------------------- */
+/* --------------------- start Portions and Prices --------------------- */
+
+#portions_header {
+   text-align: center;
+    font-size: 16px;
+    margin: 0px auto 10px auto;
+    padding: 10px 0px 0px 0px;
+    border-top: 1px solid rgb(225, 225, 225);
+    color: rgb(110, 110, 110);
+}
+.portions_item_input{
+    width: -webkit-Calc(100% - 155px);
+    width: -moz-Calc(100% - 155px);
+    width: -o-Calc(100% - 155px);
+    width: -ms-Calc(100% - 155px);
+    width: Calc(100% - 155px);
+}
+.portions_price_input{
+    width: 75px;
+}
+.portions_li{
+    margin: 3px 0px 5px 0px;
+}
+/* --------------------- end Portions and Prices --------------------- */
+/* --------------------- start Extras & Substitutions --------------------- */
+#upsales_header {
+   text-align: center;
+    font-size: 16px;
+    margin: 0px auto 10px auto;
+    padding: 10px 0px 0px 0px;
+    border-top: 1px solid rgb(225, 225, 225);
+    color: rgb(110, 110, 110);
+}
+#upsales_wrapper{
+   margin: 15px auto 15px auto;
+}
+.upsales_li{
+    margin: 3px 0px 5px 0px;
+}
+.upsales_item_input{
+    width: Calc(100% - 155px);
+}
+.upsales_price_input{
+    width: 75px;
+}
+/* --------------------- end Extras & Substitutions --------------------- */
+/* --------------------- start Food Performance --------------------- */
+
+div.performance_graph{
+    width: 100%;
+    overflow-x:scroll;
+    margin: 0px auto 0px auto;
+}
+svg.performance_graph{
+    display: block;
+    margin: 0px auto 0px auto;
+}
+li.performance_graph {
+    display: inline-block;
+    font-size: 12px;
+    width: 110px;
+    text-align: center;
+}
+#today_performance_wrapper{
+    margin: 0px auto 20px auto;
+}
+#today_perormance_value{
+    font-size: 35px;
+}
+#time_scale_header,#today_perormance_value{
+    color: black;
+    text-align: center;
+}
+#interested_and_viewed{
+    font-size: 13px;
+    text-align: center;
+}
+#sample_size_wrapper{
+    font-size: 13px;
+    margin: 10px 0px 5px 39px;
+}
+#data_granularity_input{
+    width: Calc(100% - 164px);
+    margin: 0px 0px 0px 30px;
+}
+#timesscale_wrapper{
+    font-size: 13px;
+    padding: 0px 0px 0px 39px;
+}
+#data_timescale_input{
+    margin: 0px 0px 0px 56px;
+    width: -webkit-Calc(100% - 164px);
+    width: -moz-Calc(100% - 164px);
+    width: -o-Calc(100% - 164px);
+    width: -ms-Calc(100% - 164px);
+    width: Calc(100% - 164px);
+}
+#plot_data_button{
+    width: 160px;
+    height: 40px;
+    margin: 30px auto 0px auto;
+    text-align: center;
+    font-size: 15px;
+    line-height: 40px;
+    background-color: rgb(0,149,255);
+    color: white;
+}
+#plot_data_button:hover{
+    cursor: pointer;
+}
+/* --------------------- end Food Performance --------------------- */
+/* --------------------- start Food Diagnostics Tab --------------------- */
+/* --------------------- start Tab 2 --------------------- */
+
+#questions_wrapper{
+ margin: 10px 0px 0px 0px;
+    font-size: 15px;
+    color: rgb(110,110,110);
+}
+.create_survey.question_type_label {
+    display: block;
+    text-align: center;
+    border-top: 1px solid #E4E4E4;
+    padding: 10px 0px 5px 0px;
+    margin: 20px 0px 0px 0px;
+}
+.create_survey.questions_list{
+   padding: 0px 0px 0px 95px;
+}
+.create_survey.question_li{
+    list-style-type: decimal;
+    margin: 5px 0px 5px 0px;
+    position: relative;
+    font-size: 13px;
+}
+.create_survey.question_li::before{
+    content: "Question";
+    font-size: 13px;
+    position: absolute;
+    top: 3px;
+    left: -73px;
+}
+.create_survey.question_input {
+    width: -webkit-Calc(100% - 10px);
+    width: -moz-Calc(100% - 10px);
+    width: -o-Calc(100% - 10px);
+    width: -ms-Calc(100% - 10px);
+    width: Calc(100% - 10px);
+    position: relative;
+    left: 4px;
+    margin: 0px 0px 0px -2px;
+}
+.create_survey.answers_list{
+    padding: 0px 0px 0px 30px;
+}
+.create_survey.answer_li{
+    list-style-type: lower-alpha;
+    position: relative;
+    margin: 3px 0px 0px 0px;
+}
+.create_survey.answer_li::before {
+    content: "Answer";
+    font-size: 13px;
+    position: absolute;
+    top: 4px;
+    left: -65px;
+}
+.create_survey.answer_input {
+    width: -webkit-Calc(100% - 8px);
+    width: -moz-Calc(100% - 8px);
+    width: -o-Calc(100% - 8px);
+    width: -ms-Calc(100% - 8px);
+    width: Calc(100% - 8px);
+}
+.create_survey.custom_response.answers_list {
+    display: none;
+}
+.new_feedback_questions{
+    width: 230px;
+    text-align: center;
+    padding: 5px 0px 5px 0px;
+    color: rgb(127, 127, 127);
+    border: 1px solid rgb(200,200,200);
+    font-weight: 100;
+    margin: 10px auto 0px auto;
+}
+#survey_type_wrap{
+    font-size: 15px;
+}
+#survey_type_wrap h4{
+   text-align: center;
+    color: rgb(110, 110, 110);
+}
+#interest_type_wrapper{
+    font-size: 13px;
+    margin: 5px 0px 0px 0px;
+    text-align: center;
+}
+#survey_size_wrapper label{
+    margin: 0px 20px 0px 17px;
+    color: rgb(110, 110, 110);
+    display: inline-block;
+}
+#survey_size_select{
+    width: -webkit-Calc(100% - 125px);
+    width: -moz-Calc(100% - 125px);
+    width: -o-Calc(100% - 125px);
+    width: -ms-Calc(100% - 125px);
+    width: Calc(100% - 125px);
+}
+.right_sidebar_options_wrapper{
+    margin: 40px auto 0px auto;
+    position: relative;
+    width: 160px;
+}
+/* --------------------- end Tab 2 --------------------- */
+/* --------------------- start Tab 1 --------------------- */
+.survey_info_label{
+    width: 80px;
+    display: inline-block;
+    color: rgb(110, 110, 110);
+    text-align: right;
+}
+.survey_info_text{
+    display: inline-block;
+    width: -webkit-Calc(100% - 90px);
+    width: -moz-Calc(100% - 90px);
+    width: -o-Calc(100% - 90px);
+    width: -ms-Calc(100% - 90px);
+    width: Calc(100% - 90px);
+    text-align: right;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgb(20, 20, 20);
+}
+#survey_greeting_text{
+    font-size: 13px;
+    color: rgb(160, 160, 160);
+    text-align: center;
+}
+#survey_results_wrapper{
+ margin: 10px 0px 0px 0px;
+    font-size: 15px;
+    color: rgb(110,110,110);
+}
+.survey_results.question_type_label {
+    display: block;
+    text-align: center;
+    border-top: 1px solid #E4E4E4;
+    padding: 10px 0px 5px 0px;
+    margin: 20px 0px 0px 0px;
+}
+.survey_results.questions_list{
+   padding: 0px 0px 0px 30px;
+}
+.survey_results.question_li{
+    margin: 5px 0px 5px 0px;
+    position: relative;
+    font-size: 13px;
+}
+.survey_results.question_text {
+    color: rgb(20, 20, 20);
+}
+.survey_results.single_response.answers_list {
+    margin: 0px 0px 0px 60px;
+}
+.survey_results.all_that_apply.answers_list {
+    margin: 0px 0px 0px 60px;
+}
+.survey_results.custom_response.answers_list{
+    margin: 0px 0px 0px 20px;
+}
+.survey_results.single_response.answer_li {
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    vertical-align: top;
+    color: rgb(20,20,20);
+}
+.survey_results.all_that_apply.answer_li {
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    vertical-align: top;
+    color: rgb(20,20,20);
+}
+.survey_results.single_response.data_select{
+    margin: 10px 0px 0px 60px;
+}
+.survey_results.all_that_apply.data_select{
+    margin: 10px 0px 0px 60px;
+}
+.survey_results.custom_response.response_graph{
+    display: none;
+}
+.survey_results.custom_response.data_select{
+    display: none;
+}
+.survey_results.custom_response.answer_li{
+    list-style-type: decimal;
+    color: rgb(107, 107, 107);
+    background: white;
+    padding: 5px 0px 5px 10px;
+    border: 1px solid rgb(166, 166, 166);
+    box-shadow: 0px 3px rgb(200,200,200);
+    margin: 5px 0px 0px 0px;
+}
+
+
+/* ----------- survey results graphs end ----------- */
+/* --------------------- end Tab 2 --------------------- */
+/* --------------------- end Food Diagnostics Tab --------------------- */
+
+/* --------------------- Mediq Queries ---------------------- */
+@media screen and (max-width: 800px) {
+    #right_sidebar_wrapper{
+        max-width: 500px;
+        -webkit-transform: translate(500px, 0px);
+        -moz-transform: translate(500px, 0px);
+        -o-transform: translate(500px, 0px);
+        -ms-transform: translate(500px, 0px);
+        transform: translate(500px, 0px);
+    }
+
+}
+@media screen and (max-width: 700px) {
+    #right_sidebar_wrapper{
+        max-width: 410px;
+        -webkit-transform: translate(410px, 0px);
+        -moz-transform: translate(410px, 0px);
+        -o-transform: translate(410px, 0px);
+        -ms-transform: translate(410px, 0px);
+        transform: translate(410px, 0px);
+    }
+
+}
+@media screen and (max-width: 600px) {
+    #right_sidebar_wrapper{
+        max-width: 380px;
+        -webkit-transform: translate(380px, 0px);
+        -moz-transform: translate(380px, 0px);
+        -o-transform: translate(380px, 0px);
+        -ms-transform: translate(380px, 0px);
+        transform: translate(380px, 0px);
+    }
+
+}
+@media screen and (max-width: 500px) {
+    #right_sidebar_wrapper{
+        max-width: 350px;
+        -webkit-transform: translate(350px, 0px);
+        -moz-transform: translate(350px, 0px);
+        -o-transform: translate(350px, 0px);
+        -ms-transform: translate(350px, 0px);
+        transform: translate(350px, 0px);
+    }
+}
+@media screen and (max-width: 800px) {
+    #right_sidebar_resize_pillar{
+        display: none;
+    }
+    #right_sidebar_wrapper{
+        width: 90% !important;
+        -webkit-transition: .2s ease-in-out;
+        -moz-transition: .2s ease-in-out;
+        -o-transition: .2s ease-in-out;
+        -ms-transition: .2s ease-in-out;
+        transition: .2s ease-in-out;
+        z-index: 2;
+    }
+    .show_right_sidebar{
+        -webkit-transform: translate(0px,0px) !important;
+        -moz-transform: translate(0px,0px) !important;
+        -o-transform: translate(0px,0px) !important;
+        -ms-transform: translate(0px,0px) !important;
+        transform: translate(0px,0px) !important;
+    }
+}
+
+/* --------------------- Priority and Generic CSS --------------------- */
+.show {
+    display: block !important;
+}
+.hide {
+    display: none !important;
+}
+
+
+

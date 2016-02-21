@@ -1,0 +1,113 @@
+/*--------------------------- Center List of Foods---------------------------*/
+
+#category_content_list{
+    margin: 0px auto 0px auto;
+    padding: 20px 20px 0px 20px;
+    line-height: 1;
+    /*width: 300px;*/
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    -o-column-count: 3;
+    -ms-column-count: 3;
+    column-count: 3;
+
+    -webkit-column-width: 200px;
+    -moz-column-width: 200px;
+    -o-column-width: 200px;
+    -ms-column-width: 200px;
+    column-width: 200px;
+
+    -webkit-column-gap:   15px;
+    -moz-column-gap:   15px;
+    -o-column-gap:   15px;
+    -ms-column-gap:   15px;
+    column-gap:   15px;
+}
+
+.food_entry{
+    margin: 10px auto 10px auto;
+    font-weight: 100;
+    width: 200px;
+    position: relative;
+    -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+          page-break-inside: avoid; /* Firefox */
+               break-inside: avoid; /* IE 10+ */
+    padding: 10px;
+    color: rgb(111, 111, 111);
+    display: inline-block;
+}
+.img_and_title_wrapper{
+    max-height: 200px;
+    margin: 0px auto 0px auto;
+}
+.food_item_info_wrapper{
+  padding: 10px 0px 0px 0px;
+  height: 100%;
+}
+.food_item_img{
+    max-width: 200px;
+    max-height: 166px;
+    display: block;
+    margin: 0px auto 0px auto;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    -o-user-select: none; 
+    user-select: none;          /* Likely future */ 
+}
+.food_item_title{
+    text-align: center;
+    font-weight: normal;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    -o-user-select: none; 
+    user-select: none;          /* Likely future */ 
+    font-size: 14px;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+.food_item_info_wrapper h5{
+    margin: 10px 0px 0px 0px;
+}
+.food_item_info_ul{
+    padding: 0px 0px 0px 0px;
+}
+.food_item_info_span_L{
+  float:left;
+}
+.food_item_info_span_R{
+  float:right;
+}
+.food_item_instruction{
+    font-style:italic;
+}
+
+/* ------------------- Media Queries --------------- */
+@media(max-width: 800px) {
+    #category_content_wrapper{
+        margin: 44px 0px 0px 0px !important;
+    }
+}
+@media(min-width: 1200px){
+    #category_content_list{
+        -webkit-column-gap:   25px;
+        -moz-column-gap:   25px;
+        -ms-column-gap:   25px;
+        -o-column-gap:   25px;
+        column-gap:   25px;
+    }
+}
+@media(min-width: 1500px){
+    #category_content_list{
+        -webkit-column-gap:   10px;
+        -moz-column-gap:   10px;
+        -ms-column-gap:   10px;
+        -o-column-gap:   10px;
+        column-gap:   10px;
+    }
+}
+/* ------------ Priority and Generic CSS ------------------ */

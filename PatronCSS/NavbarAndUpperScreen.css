@@ -1,0 +1,218 @@
+/* -------------Navbar and Upper Screen-------------- */
+#navbar {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 5;
+}
+#upper_navbar{
+  height: 44px;
+  border-bottom: 1px solid rgb(29, 29, 29);
+  background-color: rgb(95,95,95);
+}
+
+#restaurant_header{
+  text-align: center;
+  font-weight: normal; 
+  font-size: 18px;
+  color: rgb(241,241,241);
+}
+
+.category_talley,.chossen_food_name{
+  color: rgb(191, 191, 191);
+  font-size: 12px;
+}
+.drop_down_menu{
+  padding: 5px 0px 5px 0px;
+  z-index: 5;
+  background-color: white;
+  -webkit-box-shadow: 0px 1px 4px rgb(138, 138, 138);
+  -moz-box-shadow: 0px 1px 4px rgb(138, 138, 138);
+  -o-box-shadow: 0px 1px 4px rgb(138, 138, 138);
+  -ms-box-shadow: 0px 1px 4px rgb(138, 138, 138);
+  box-shadow: 0px 1px 4px rgb(138, 138, 138);
+}
+.dd_menu_option{
+  max-width: 100%;
+  position: relative;
+  color: rgb(95,95,95);
+  font-size: 14px;
+  font-weight: 400;
+  border-left: 5px solid transparent;
+}
+.dd_menu_option:hover {
+    border-left: 5px solid rgb(100,100,100);
+    background-color: rgb(230,230,230);
+    cursor: pointer;
+}
+.dd_menu_option a{
+  text-decoration: none;
+  color: rgb(95,95,95);
+}
+/* ---------headers and lower navbar--------------------*/
+#single_img_view_header{
+  position: relative;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1;
+}
+.header{
+  color: rgb(241,241,241);
+  text-align: center;
+  background-color:rgb(37, 37, 35);
+  -webkit-box-shadow: 0 0 0 1px rgb(58, 58, 58) inset;
+  -moz-box-shadow: 0 0 0 1px rgb(58, 58, 58) inset;
+  -o-box-shadow: 0 0 0 1px rgb(58, 58, 58) inset;
+  -ms-box-shadow: 0 0 0 1px rgb(58, 58, 58) inset;
+  box-shadow: 0 0 0 1px rgb(58, 58, 58) inset;
+  border-bottom: 1px solid rgb(29, 29, 29);
+  height: 44px;
+  padding: 5px 0px 0px 0px;
+  width: 100%;
+  position: absolute;
+  font-weight: 100;
+  z-index: 1;
+}
+.fixed_header{
+  position: fixed;
+  top: 44px;
+  left: 0px;
+  width: 100%;
+}
+.category_header{
+
+}
+.category_header h4{
+  font-size: 16px;
+}
+.food_type_header{
+  line-height: 30px;
+}
+/*----------Menu Bar Icon and Navigation List-------*/
+.nav_menu_icon {
+  width: 25px;
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  padding: 0px 5px 5px 5px;
+  -webkit-box-sizing: initial;
+  -moz-box-sizing: initial;
+  -o-box-sizing: initial;
+  -ms-box-sizing: initial;
+  box-sizing: initial;
+}
+.nav_icon_lines {
+  width: 100%;
+  height: 3px;
+  background-color: rgb(241,241,241);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  margin: 5px 0px 0px 0px;
+}
+.navigation_menu{
+  display: none;
+  position: absolute;
+  top: 43px;
+  left: 0px;
+}
+.navigation_menu li{
+  padding: 10px 30px 10px 30px;
+}
+
+/* ------Options Icon and Categories Menu ----------*/
+.categories_icon{
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -o-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px;
+  color: rgb(241,241,241);
+  line-height: 27px;
+  text-align: center;
+  border: 1px solid rgb(241,241,241);
+  font-size: 25px;
+  position: absolute;
+  right: 15px;
+  font-style: italic;
+  top: 7px;
+  font-family: time-new roman;
+}
+.categories_menu{
+  display: none;
+  position: fixed;
+  right: 0px;
+  top: 43px;
+  background-color: white;
+  max-height: Calc(100% - 43px);
+  overflow: scroll;
+}
+.categories_menu li{
+  padding: 3px 30px 3px 30px;
+}
+.menu_option_primary_info{
+  color: rgb(95,95,95);
+}
+.menu_option_secondary_info{
+  color: rgb(170, 170, 170);
+  font-size: 12px;
+  text-indent: 10px;
+}
+/* Lesser priority and generic css attributes */
+.highlight_icon{
+  background-color: rgb(0,0,0);
+}
+
+@media only screen and (min-width: 650px) { /* TABLET */
+   body {
+      overflow: auto;
+      background-color: rgb(233, 233, 233);
+   }
+   #upper_navbar {
+    background-color: #fff;
+    border-bottom: 0px solid transparent;
+  }
+  .nav_icon_lines{
+    background-color:rgb(129, 129, 129);
+  }
+  .categories_icon{
+    color:rgb(129, 129, 129);
+    border: 1px solid rgb(129, 129, 129);
+  }
+  .highlight_icon {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+  }
+   #restaurant_header{
+      text-align: center;
+      font-size: 18px;
+      color: rgb(129, 129, 129);
+   }
+   .header {
+    text-align: center;
+    height: 44px;
+    padding: 5px 0px 0px 0px;
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    -o-box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    -ms-box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    background-color: #fafafa;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 0px solid transparent;
+  }
+
+  .header .header_title{
+    color: rgb(129, 129, 129);
+  }
+  
+}
+

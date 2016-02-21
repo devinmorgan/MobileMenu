@@ -1,0 +1,363 @@
+*{
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+	font-family: helvetica;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+html{ 
+    background: url("../Images/Fish_Dinner_Background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+}
+.background_overlay{
+	position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.60);
+    overflow: scroll;
+}
+.homepage_tab{
+	position: relative;
+    top: 190px;
+    width: 90%;
+    max-width: 500px;
+    margin: 0px auto;
+    text-align: center;
+}
+div.back_button{
+	color: white;
+    text-decoration: underline;
+    margin: 20px 0px 0px 0px;
+    font-size: 14px;
+}
+.error_message{
+    color: red;
+    font-size: 14px;
+    margin: 10px 0px 0px 0px;
+}
+/* ------------------ Splash Tab (midle) -------------*/
+.title_header{
+	width: 100%;
+    text-align: center;
+    padding: 40px 0px 0px 0px;
+    position: absolute;
+    color: white;
+    font-weight: normal;
+    font-size: 50px;
+}
+.button_form_wrap{
+	
+}
+.instructions {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    font-weight: 200;
+    letter-spacing: 1px;
+    width: 100%;
+    margin: 0px auto 20px auto;
+}
+.button{
+	width: 100%;
+    margin: 10px auto 10px auto;
+    padding: 15px 0px 15px 0px;
+}
+.button:hover{
+	cursor: pointer;
+}
+.button:active{
+    box-shadow: inset 0px 0px 5px #2C2C2C;
+}
+.top_button{
+    background-image: -webkit-linear-gradient(rgb(99, 214, 161),rgb(47, 167, 84));
+    background-image: -moz-linear-gradient(rgb(99, 214, 161),rgb(47, 167, 84));
+    background-image: -o-linear-gradient(rgb(99, 214, 161),rgb(47, 167, 84));
+    background-image: -ms-linear-gradient(rgb(99, 214, 161),rgb(47, 167, 84));
+    background-image: linear-gradient(rgb(99, 214, 161),rgb(47, 167, 84));
+    color: white;
+    border: 1px solid rgb(4, 83, 31);
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.81);
+}
+.top_button:hover{
+    background-image: linear-gradient(rgb(99, 214, 161),rgb(34, 141, 67));
+}
+.bottom_button {
+    border: 1px solid rgb(16, 76, 233);
+    background-image: -webkit-linear-gradient(rgb(128, 193, 247), rgb(61, 134, 219));
+    background-image: -moz-linear-gradient(rgb(128, 193, 247), rgb(61, 134, 219));
+    background-image: -o-linear-gradient(rgb(128, 193, 247), rgb(61, 134, 219));
+    background-image: -ms-linear-gradient(rgb(128, 193, 247), rgb(61, 134, 219));
+    background-image: linear-gradient(rgb(128, 193, 247), rgb(61, 134, 219));
+    color: white;
+    text-shadow: 0px 1px 2px rgb(24, 55, 77);
+}
+.bottom_button:hover{
+    background-image: linear-gradient(rgb(128, 193, 247), rgb(49, 110, 182));
+}
+.or_divider{
+	color: white;
+    position: relative;
+    width: 100%;
+    margin: 0px auto 0px auto;
+}
+.or_divider:before {
+    content: "";
+    width: 43%;
+    height: 1px;
+    display: block;
+    -webkit-box-shadow: inset 0px 1px 2px white;
+    -moz-box-shadow: inset 0px 1px 2px white;
+    -ms-box-shadow: inset 0px 1px 2px white;
+    -o-box-shadow: inset 0px 1px 2px white;
+    box-shadow: inset 0px 1px 2px white;
+    position: absolute;
+    left: 3%;
+    top: 8px;
+}
+.or_divider:after {
+    content: "";
+    width: 43%;
+    height: 1px;
+    display: block;
+    -webkit-box-shadow: inset 0px 1px 2px white;
+    -moz-box-shadow: inset 0px 1px 2px white;
+    -ms-box-shadow: inset 0px 1px 2px white;
+    -o-box-shadow: inset 0px 1px 2px white;
+    box-shadow: inset 0px 1px 2px white;
+    position: absolute;
+    right:3%;
+    top: 8px;
+}
+form.sign_in{
+    margin: 45px 0px 0px 0px;
+    color: white;
+}
+h4.sign_in{
+    font-size: 22px;
+    font-weight: lighter;
+    margin: -10px 0px 15px 0px;
+}
+label.sign_in.email{
+
+}
+input.sign_in#email{
+    color: white;
+}
+label.sign_in.password{
+
+}
+input.sign_in#password{
+    color: white;
+}
+div.sign_in.submit_button{
+    display: block;
+    margin: 10px auto 0px;
+    border: 0px none;
+    color: white;
+    font-size: 16px;
+}
+div.sign_in.submit_button:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+/* ---------------- Search Restaurants Tab (left) --------------------- */
+div.patron_form_wrap{
+	top: 100px;
+}
+input.search_restaurants{
+	width: 100%;
+    line-height: 14px;
+    padding: 12px 0px 12px 10px;
+    font-size: 14px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: white;
+    margin: 10px 0px 10px 0px;
+}
+div.search_by_location{
+	width: 100%;
+    padding: 11px 0px 11px 0px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.79);
+    color: white;
+    font-size: 16px;
+    font-weight: lighter;
+    margin: 10px 0px 10px 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+div.search_by_location:active{
+	background-color: rgba(255, 255, 255, 0.3);
+}
+ul.restaurants_results{
+	width: 100%;
+    color: white;
+    margin: 0px 0px 0px 0px;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+}
+/*ul.restaurants_results::before {
+    content: "Results List";
+    position: absolute;
+    top: -13px;
+    width: 100%;
+    text-align: center;
+    display: block;
+}*/
+li.restaurants_results {
+	width: 100%;
+    padding: 0px 10px 0px 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid white;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0px 0px 5px 0px;
+    text-align: left;
+    height: 42px;
+    line-height: 42px;
+}
+li.restaurants_results:hover{
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+li a.restaurants_results{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ---------------- Contact Us Tab (right) ---------------*/
+div.manage_form_wrap.homepage_tab{
+	top: 110px;
+}
+p.pitch_synonpsis{
+	font-weight: lighter;
+    font-size: 18px;
+    color: white;
+    position: relative;
+}
+form.new_restaurant{
+
+}
+span.left_hand_side{
+	font-size: 18px;
+}
+span.equals{
+	font-size: 30px;
+}
+span.right_hand_side{
+    font-size: 30px;
+    font-weight: normal;
+}
+.restaurant_info{
+	width: 100%;
+    color: white;
+    margin: 0px 0px 5px 0px;
+    position: relative;
+    top: 10px;
+}
+label{
+	margin: 10px 0px 2px 0px;
+    display: block;
+}
+input{
+	background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.73);
+    padding: 7px 10px 7px 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+div.restaurant_info.submit_button{
+	clear: both;
+    color: white;
+    padding: 12px 0px 12px 0px;
+    background-image: -webkit-linear-gradient(rgb(221, 207, 51),rgb(173, 132, 60));
+    background-image: -moz-linear-gradient(rgb(221, 207, 51),rgb(173, 132, 60));
+    background-image: -o-linear-gradient(rgb(221, 207, 51),rgb(173, 132, 60));
+    background-image: -ms-linear-gradient(rgb(221, 207, 51),rgb(173, 132, 60));
+    background-image: linear-gradient(rgb(221, 207, 51),rgb(173, 132, 60));
+    width: 250px;
+    margin: 30px auto 0px auto;
+    text-shadow: 0px 1px 1px rgb(98, 98, 5);
+    border: 1px solid rgb(180, 155, 0);
+}
+div.restaurant_info.submit_button:hover{
+	cursor: pointer;
+    background-image: linear-gradient(rgb(221, 207, 51),rgb(132, 100, 44));
+    border: 1px solid rgb(131, 113, 2);
+}
+
+@media(min-width: 800px) {
+	label.restaurant_info{
+		width: 35%;
+	    float: left;
+	    clear: both;
+	}
+	input.restaurant_info{
+		width: 62%;
+    	float: right;
+	}
+	form.new_restaurant {
+	    height: 180px;
+	    margin-top: 20px;
+	}
+}
+
+@media(min-width: 750px) {
+	.button_form_wrap{
+		top: 200px;
+	}
+}
+@media(max-width: 750px) {
+	.button_form_wrap{
+		top: 150px;
+	}
+}
+@media(max-width:400px) {
+	.button_form_wrap{
+		top: 110px;
+	}
+	.title_header{
+		font-size: 40px;
+	}
+}
+
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
+.centered{
+  height: 100%;
+}
+.centered:before{
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}

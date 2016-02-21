@@ -1,0 +1,290 @@
+/* ----------------Share Link Modal ----------------*/
+.modal_overlay.share_link{
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 5;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.modal_header{
+  color: rgb(0, 0, 0);
+  font-size: 13px;
+  text-align: center;
+}
+.share_link.modal_body{
+  width: 80%;
+  max-width: 430px;
+  background-color: rgb(255, 255, 255);
+  margin: 15% auto 0px auto;
+  border: 1px solid rgb(193, 193, 193);
+  -webkit-box-shadow: 0px 2px 10px rgb(162, 162, 162);
+  -moz-box-shadow: 0px 2px 10px rgb(162, 162, 162);
+  -o-box-shadow: 0px 2px 10px rgb(162, 162, 162);
+  -ms-box-shadow: 0px 2px 10px rgb(162, 162, 162);
+  box-shadow: 0px 2px 10px rgb(162, 162, 162);
+  padding: 30px;
+}
+#share_food_name{
+  text-align: center;
+  color: rgb(63, 63, 63);
+  margin: 0px 0px 0px 0px;
+  font-size: 24px;
+}
+#share_link_input{
+  padding: 2px 2px 2px 2px;
+  color: black;
+  width: 100%;
+  margin: 10px 0px 5px 0px;
+}
+.modal_footer{
+  color: gray;
+  font-size: 10px;
+  text-align: center;
+}
+
+/*--------------------- Survey Food Modal ------------------*/
+.modal_overlay.food_survey{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,.8);
+    z-index: 5;
+}
+#skip_survey_btn{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 12px;
+    color: rgb(64, 64, 64);
+}
+#skip_survey_btn:hover{
+  text-decoration: underline;
+}
+.forward.slash{
+  position: absolute;
+    top: 5px;
+    right: 0px;
+    width: 15px;
+    height: 2px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.backward.slash{
+  position: absolute;
+    top: 5px;
+    right: 0px;
+    width: 15px;
+    height: 2px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.slash{
+    background-color: rgb(200, 200, 200);
+}
+#food_survey_wrapper{
+    width: 90%;
+    max-width: 500px;
+    height: 95%;
+    max-height: 600px;
+    background-color: white;
+    margin: 5% auto 5% auto;
+    padding: 15px 20px 20px 20px;
+    overflow: scroll;
+    position: relative;
+}
+
+.patron_response.survey_header{
+    text-align: center;
+    margin: 10px 0px 0px 0px;
+    letter-spacing: 2px;
+    color:rgb(65, 67, 69);
+    font-weight: lighter;
+}
+.patron_response.survey_greeting{
+      text-align: center;
+    padding: 10px 20px 0px 20px;
+    font-size: 14px;
+    color: rgb(65, 67, 69);
+    font-weight: lighter;
+}
+#view_food_link{
+    text-align: center;
+    margin: 20px 0px 20px 0px;
+    cursor: pointer;
+    font-weight: lighter;
+    text-decoration: underline;
+    color: rgb(65, 67, 69);
+}
+.patron_response.fieldset{
+    border: 1px solid rgb(69, 171, 243);
+    background: rgba(69, 171, 243,.15);
+    padding: 8px 5px 5px 10px;
+    margin: 10px 0px 20px 0px;
+}
+.patron_response.question_type_label{
+  color: rgb(65, 67, 69);
+    font-weight: lighter;
+    margin: 0px 0px 5px 0px;
+    display: block;
+}
+.fieldset_required_marker{
+  color: red;
+  font-weight: lighter;
+}
+.patron_response.label{
+    font-weight: 400;
+    display: block;
+    padding: .5em 1em;
+    margin: .5em .5em .5em 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+    background: #FFF;
+    background-image: -webkit-linear-gradient(-180deg,rgba(255,255,255,.5) 0,rgba(228,228,228,.5) 100%);
+    background-image: -moz-linear-gradient(-180deg,rgba(255,255,255,.5) 0,rgba(228,228,228,.5) 100%);
+    background-image: -o-linear-gradient(-180deg,rgba(255,255,255,.5) 0,rgba(228,228,228,.5) 100%);
+    background-image: -ms-linear-gradient(-180deg,rgba(255,255,255,.5) 0,rgba(228,228,228,.5) 100%);
+    background-image: linear-gradient(-180deg,rgba(255,255,255,.5) 0,rgba(228,228,228,.5) 100%);
+    border: 1px solid #DFDFDF;
+    font-size: 13px;
+    line-height: 18px;
+    color:rgb(65, 67, 69);
+    font-weight: lighter;
+}
+.patron_response.input{
+    clear: left;
+    float: left;
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin: 0 7px 0 0;
+    vertical-align: bottom;
+    position: relative;
+    top: 3px;
+}
+.patron_response.textarea{
+    width: -webkit-Calc(100% - 8px);
+    width: -moz-Calc(100% - 8px);
+    width: -o-Calc(100% - 8px);
+    width: -ms-Calc(100% - 8px);
+    width: Calc(100% - 8px);
+    resize: vertical;
+    border-radius: 2px;
+    height: 100px;
+    border-color: #c4c4c4;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: rgb(65, 67, 69);
+    font-size: 14px;
+    padding: 5px 5px 5px 5px;
+}
+#submit_survey_btn{
+    background: rgb(69, 171, 243);
+    width: 90%;
+    height: 50px;
+    line-height: 50px;
+    margin: 0px auto 0px auto;
+    color: rgb(255,255,255);
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    -webkit-box-shadow: 0px 4px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 4px 0px rgba(0,0,0,0.15);
+    -o-box-shadow: 0px 4px 0px rgba(0,0,0,0.15);
+    -ms-box-shadow: 0px 4px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 4px 0px rgba(0,0,0,0.15);
+    font-weight: lighter;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*------------------ Search for food Modal ------------------*/
+
+.modal_overlay.food_search{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: rgba(0,0,0,.7);
+}
+.food_search.wrapper{
+    width: 100%;
+    max-width: 400px;
+    margin: 44px auto 0px auto;
+}
+input.food_search{
+    width: -webkit-calc(100% - 10px);;
+    width: -moz-calc(100% - 10px);;
+    width: -o-calc(100% - 10px);;
+    width: -ms-calc(100% - 10px);;
+    width: calc(100% - 10px);
+    padding: 10px 10px 10px 10px;
+    font-size: 14px;
+    color: rgb(90, 90, 90);
+    margin: 5px 5px 0px 5px;
+    border: 0px;
+    -webkit-box-shadow: inset 0px 0px 3px black;
+    -moz-box-shadow: inset 0px 0px 3px black;
+    -o-box-shadow: inset 0px 0px 3px black;
+    -ms-box-shadow: inset 0px 0px 3px black;
+    box-shadow: inset 0px 0px 3px black;
+}
+ul.food_search{
+  width: -webkit-calc(100% - 10px);;
+  width: -moz-calc(100% - 10px);;
+  width: -o-calc(100% - 10px);;
+  width: -mscalc(100% - 10px);;
+  width: calc(100% - 10px);
+  background: white;
+  margin: 0px 5px 0px 5px;
+}
+li.food_search{
+  padding: 10px;
+  color: rgb(85, 85, 85);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Title of the document</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="HomePageCSS/Middle.css" >
+		<script src="HomePageJS/Middle.js"></script>
+	</head>
+	<body>
+		<div class="background_overlay">
+			<h1 class="title_header">Mobile Menu</h1>
+			<!-- <div class="button_form_wrap homepage_tab hide" data-tab-number="1">
+				<div class="top_button button" data-tab-number="2" onclick="revealCorrectTab(this)">Restaurant Patron</div>
+				<p class="or_divider">or</p>
+				<div class="bottom_button button" data-tab-number="3" onclick="revealCorrectTab(this)">Restaurant Owner</div>
+				
+			</div> -->
+			<div class="patron_form_wrap homepage_tab" data-tab-number="2">
+				<div class="instructions">Browse complete picture menus of your favorite sit-down restaurants.</div>
+				<input type="text" class="search_restaurants" placeholder="Search for a Restaurant..." onkeyup="findRestaurantsFromQuery(this)"/>
+				<ul class="restaurants_results">
+					<!-- <li class="restaurants_results">
+						<a href="http://localhost/MobileMenu/Patron.html">Example Restaurant Name</a>
+					</li> -->
+				</ul>
+				<p class="or_divider">or</p>
+				<div class="search_by_location">Use My Location</div>
+				
+				<div class="back_button" data-tab-number="3" onclick="revealCorrectTab(this)">Restaurant Owners click here!</div>
+			</div>
+			<div class="manage_form_wrap homepage_tab hide" data-tab-number="3">
+				<form class="sign_in" >
+					<h4 class="sign_in">Have an account?</h4>
+
+					<label class="sign_in email" for="email">Email</label>
+					<input type="text" class="sign_in" id="email" placeholder="Email" />
+
+					<label class="sign_in password" for="password">Password</label>
+					<input type="password" class="sign_in" id="password" placeholder="Password"/>
+
+					<div class="sign_in submit_button" onclick="loginUser()">Sign in</div>
+					<div class="sign_in error_message"></div>
+				</form>
+				<!-- <p class="pitch_synonpsis">Your Menu + Mobile Phones + The Internet = <b>Better Menu</b></p>
+
+				<form class="new_restaurant">
+					<label class="restaurant_info restaurant_name" for="restaurant_name">Restaurant Name</label>
+					<input type="text" class="restaurant_info" id="restaurant_name" placeholder="Restaurant Name" />
+
+					<label class="restaurant_info owner_name" for="owner_name">Your Name</label>
+					<input type="text" class="restaurant_info" id="owner_name" placeholder="Your Name"/>
+
+					<label class="restaurant_info owner_email" for="owner_email">Contact Email</label>
+					<input type="text" class="restaurant_info" id="owner_email" placeholder="Contact Email"/>
+
+					<label class="restaurant_info phone_number" for="phone_number" >Phone Number</label>
+					<input type="text" class="restaurant_info" id="phone_number" placeholder="Phone Number"/>
+				</form>
+
+				<div class="restaurant_info submit_button button"> Let's get in touch!</div>
+				<div class="restaurant_info error_message"></div>
+
+				 -->
+				 <div class="back_button" data-tab-number="2" onclick="revealCorrectTab(this)">Click to go back</div>
+			</div>
+		</div>
+	</body>
+</html>

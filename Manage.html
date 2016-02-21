@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Title of the document</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="ManageCSS/SurveyGraphObject.css" >
+		<link rel="stylesheet" type="text/css" href="ManageCSS/PerformanceGraphObject.css" >
+		<link rel="stylesheet" type="text/css" href="ManageCSS/RightSidebar.css" >
+		<link rel="stylesheet" type="text/css" href="ManageCSS/SymbolsGlyphsAndIcons.css" >
+		<link rel="stylesheet" type="text/css" href="ManageCSS/Headbar.css" >
+		<link rel="stylesheet" type="text/css" href="ManageCSS/LeftSidebar.css" >
+		<link rel="stylesheet" type="text/css" href="ManageCSS/CentralFoodList.css" >
+		<link rel="stylesheet" type="text/css" href="ManageCSS/Manage.css" >
+
+		<!-- JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="ManageJS/Manage.js"></script>
+		<script src="ManageJS/Category.js"></script>
+		<script src="ManageJS/DragAndDrop.js"></script>
+		<script src="ManageJS/Food.js"></script>
+		<script src="ManageJS/ManageFoodSurvey.js"></script>
+		<script src="ManageJS/ManageFoodPerformance.js"></script>
+		<script src="ManageJS/PerformanceGraphObject.js"></script>
+		<script src="ManageJS/SurveyGraphObject.js"></script>
+		<script src="ManageJS/FormValidation.js"></script>
+		<script src="ManageJS/ResponsiveAndMobile.js"></script>
+			
+	</head>
+	<body onload="hideRightSidebarElements(),bodyOnLoad()">
+		<div id="headbar">
+			<div id="category_menu_icon" class="mobile" onclick="toggleLeftSidebar()" >
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div id="sign_out" >Sign Out</div>
+			<div id="restaurant_name" >Restaurant Name</div>
+		</div>
+		<div id="sidebar_menu_open_overlay" class="mobile" style="display:block;" onclick="hideAllSidebars()"></div>
+		<div id="left_sidebar_wrapper" style="left: 0px;">
+			<span id="left_sidebar_tabs_wrapper">
+				<span class="left_sidebar_tab_header tab_selected" data-tab-number="1" data-tab-className="left_sidebar_tab_wrapper" onclick="selectRightAndLeftSidebarTabs(this)">Categories</span>
+				<span class="left_sidebar_tab_header" data-tab-number="2" data-tab-className="left_sidebar_tab_wrapper" onclick="selectRightAndLeftSidebarTabs(this)">Item Filters</span>
+			</span>
+			<!-- There should probably also be a search feature but I'll put that in later  -->
+			<div class="left_sidebar_tab_wrapper" data-tab-number="1">
+				<ul id="menu_categories_list" class="left_sidebar_tab_list">
+					<!-- list of Restaurant Menu's Categories -->
+				</ul>
+				<div id="new_category_btn" onclick="createNewMenuCategory()">New Category</div>
+			</div>
+			<div class="left_sidebar_tab_wrapper" data-tab-number="2" style="display:none;">
+				<ul class="left_sidebar_tab_list">
+					<li class="left_sidebar_tab_li item" onclick="selectCategory(this)">
+						<div class="hover_select_indicator">
+							<span class="filter_name">Foods Getting Surveyed</span>
+						</div>
+					</li>
+					<li class="left_sidebar_tab_li item" onclick="selectCategory(this)">
+						<div class="hover_select_indicator">
+							<span class="filter_name">Best Performers First</span>
+						</div>
+					</li>
+					<li class="left_sidebar_tab_li item" onclick="selectCategory(this)">
+						<div class="hover_select_indicator">
+							<span class="filter_name">Worst Performers First</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="right_sidebar_resize_pillar" onmousedown="startResizeRightSidebar(event)" onclick="resetToDefaultSize()" style="right: 350px;" ></div>
+		<div id="right_sidebar_wrapper" style="width: 350px;">
+			<h3 id="right_sidebar_header">Category Name</h3>
+			<div class="right_sidebar_container" data-container-type="category">
+				<div class="label_field_wrapper">
+					<label class="right_sidebar_label">Category Name</label>
+					<input type="text" class="right_sidebar_input title" data-container-type="category" placeholder="Category Name"></input>
+				</div>
+				<div class="label_field_wrapper">
+					<label class="right_sidebar_label">Time Served</label>
+					<select class="time_served_select until_time" data-container-type="category">
+						<option value="-1">--Until--</option>
+						<option value="6">6 a.m.</option>
+						<option value="7">7 a.m.</option>
+						<option value="8">8 a.m.</option>
+						<option value="9">9 a.m.</option>
+						<option value="10">10 a.m.</option>
+						<option value="11">11 a.m.</option>
+						<option value="12">12 p.m.</option>
+						<option value="13">1 p.m.</option>
+						<option value="14">2 p.m.</option>
+						<option value="15">3 p.m.</option>
+						<option value="16">4 p.m.</option>
+						<option value="17">5 p.m.</option>
+						<option value="18">6 p.m.</option>
+						<option value="19">7 p.m.</option>
+						<option value="20">8 p.m.</option>
+						<option value="21">9 p.m.</option>
+						<option value="22">10 p.m.</option>
+						<option value="23">11 p.m.</option>
+						<option value="0">12 a.m.</option>
+						<option value="1">1 a.m.</option>
+						<option value="2">2 a.m.</option>
+					</select>
+					<select class="time_served_select from_time" data-container-type="category">
+						<option value="-1">--From--</option>
+						<option value="6">6 a.m.</option>
+						<option value="7">7 a.m.</option>
+						<option value="8">8 a.m.</option>
+						<option value="9">9 a.m.</option>
+						<option value="10">10 a.m.</option>
+						<option value="11">11 a.m.</option>
+						<option value="12">12 p.m.</option>
+						<option value="13">1 p.m.</option>
+						<option value="14">2 p.m.</option>
+						<option value="15">3 p.m.</option>
+						<option value="16">4 p.m.</option>
+						<option value="17">5 p.m.</option>
+						<option value="18">6 p.m.</option>
+						<option value="19">7 p.m.</option>
+						<option value="20">8 p.m.</option>
+						<option value="21">9 p.m.</option>
+						<option value="22">10 p.m.</option>
+						<option value="23">11 p.m.</option>
+						<option value="0">12 a.m.</option>
+						<option value="1">1 a.m.</option>
+						<option value="2">2 a.m.</option>
+					</select>
+				</div>
+				<div class="label_field_wrapper">
+					<label class="right_sidebar_label">Food Type</label>
+					<select class="food_type_select" data-container-type="category">
+						<option value="1">Drink</option>
+						<option value="2">Starter</option>
+						<option value="3">Main</option>
+						<option value="4">Finisher</option>
+					</select>
+				</div>
+				<div id="served_with_wrapper">
+				    <div id="served_with_header">Served With</div>
+				    <ul id="instructions_ul">
+				        <li class="instructions_li">
+				          <label class="right_sidebar_li_label">Instruction</label>
+				          <input type="text" class="instruction_input" placeholder="e.g. 'Choose 1 from: '"/>
+				          <span class="remove_right_sidebar_li" onclick="deleteRightSidebarListItem(this)">X</span>
+				            <ul class="options_ul">
+				                <li class="options_li">
+				                    <label class="right_sidebar_li_label">Option</label>
+				                    <input type="text" onkeydown="createNewOptionForInstruction(this)" class="options_input" placeholder="e.g. 'Whole Wheat', 'White', or 'Rye'" />
+				                    <span class="remove_right_sidebar_li" onclick="deleteRightSidebarListItem(this)"> X</span>
+				                </li>
+				            </ul>
+				        </li>
+				    </ul>
+				    <div class="new_option_explanation">Press "Enter" inside textbox to create a new Option</div>
+				    <div class="create_new_right_sidebar" onclick="createNewInstructionForServedWith()">+New Served With</div>
+				</div>
+				<div id="upsales_wrapper">
+				    <div id="upsales_header">Extras & Substitutions</div>
+				    <ul id="upsales_ul">
+				        <li class="upsales_li">
+				            <label class="right_sidebar_li_label">Item</label>
+				            <input type="text" class="upsales_item_input" placeholder="e.g. 'Add Steak'"/>
+				            <label class="right_sidebar_li_label">Price</label>
+				            <input type="text" class="upsales_price_input" placeholder="e.g. '+$2.00'"/>
+				            <span class="remove_right_sidebar_li" onclick="deleteRightSidebarListItem(this)">X</span>
+				        </li>
+				    </ul>
+				    <div class="create_new_right_sidebar" onclick="createNewUpsaleItem()">+New Up-Sale</div>
+				</div>
+				<div class="dd_menu_and_btn_wrapper">
+					<ul class="right_sidebar_options_dd" data-container-type="category" style="display: none;">
+						<li class="right_sidebar_tab_li item" onclick="createNewFoodItem()">
+							+ New Food
+						</li>
+						<li class="right_sidebar_tab_li item" onclick="saveMenuCategory()">
+							Save Category
+						</li>
+						<li class="right_sidebar_tab_li item" onclick="deleteMenuCategory()">
+							Delete Category
+						</li>
+					</ul>
+					<div class="right_sidebar_options_btn" data-container-type="category" onclick="displayOptionsMenu(this)">
+						Options
+					</div>
+				</div>
+			</div>
+			<div class="right_sidebar_container" data-container-type="food">
+				<span class="right_sidebar_tab_header tab_selected" data-tab-number="1" data-tab-className="right_sidebar_tab_wrapper" onclick="selectRightAndLeftSidebarTabs(this)">Edit</span>
+				<span class="right_sidebar_tab_header" data-tab-number="2" data-tab-className="right_sidebar_tab_wrapper" onclick="selectRightAndLeftSidebarTabs(this)">Performance</span>
+				<span class="right_sidebar_tab_header" data-tab-number="3" data-tab-className="right_sidebar_tab_wrapper" onclick="selectRightAndLeftSidebarTabs(this)">Diagnostics</span>
+				<div class="right_sidebar_tab_wrapper" data-tab-number="1">
+					<div id="right_sidebar_image_wrapper">
+						<img src="#" >
+					</div>
+					<div class="label_field_wrapper">
+						<label class="right_sidebar_label">Food Title</label>
+						<input type="text" class="right_sidebar_input title" data-container-type="food" placeholder="Category Name"></input>
+					</div>
+					<div class="label_field_wrapper">
+						<label class="right_sidebar_label">Description</label>
+						<textarea class="right_sidebar_textarea" data-container-type="food" placeholder="Give your food vivid description to entice your customers"></textarea>
+					</div>
+					<div id="upsales_wrapper">
+				    <div id="portions_header">Portion Sizes &amp; Prices</div>
+					    <ul id="portions_ul">
+					        <li class="portions_li">
+					            <label class="right_sidebar_li_label" >Size</label>
+					            <input type="text" class="portions_item_input" placeholder="e.g. 'Small', '1/4 lb', etc."/>
+					            <label class="right_sidebar_li_label" >Price</label>
+					            <input type="text" class="portions_price_input" placeholder="$8.99"/>
+					            <span class="remove_right_sidebar_li" onclick="deleteRightSidebarListItem(this)">X</span>
+					        </li>
+					    </ul>
+					    <div class="create_new_right_sidebar" onclick="createNewPortionSize()">+New Portion</div>
+					</div>
+					<div class="dd_menu_and_btn_wrapper">
+						<ul class="right_sidebar_options_dd" data-container-type="food" style="display: none;">
+							<li id="test" class="right_sidebar_tab_li item" onclick="browsePhotos(this)">
+								Change Photo
+								<iframe id="photo_upload_iframe" name="photo_upload_iframe" height="0" width="0" frameborder="0" scrolling="yes"></iframe>
+							    <form id="photo_upload_form" action="Photo_Uploads.php" method="post" enctype="multipart/form-data" target="photo_upload_iframe">
+							        File: <input type="file" name="file_to_upload" class="photo_browse_input" onchange="submitNewFoodPhoto(this)">
+							        <input type="submit" name="submit_file" value="Submit" class="photo_submit_input"/>
+							    </form>
+							</li>
+							<li class="right_sidebar_tab_li item" onclick="saveFoodItem()">
+								Save Food
+							</li>
+							<li class="right_sidebar_tab_li item" onclick="deleteFoodItem()">
+								Delete Food
+							</li>
+						</ul>
+						<div class="right_sidebar_options_btn" data-container-type="food" onclick="displayOptionsMenu(this)">
+							Options
+						</div>
+					</div>
+				</div>
+				<div class="right_sidebar_tab_wrapper" data-tab-number="2" style="display:none;">
+					<div id="today_performance_wrapper">
+						<div id="time_scale_header">Last 7 days:</div>
+						<div id="today_perormance_value">24%</div>
+						<div id="interested_and_viewed">163 ppl interested, 657 ppl viewed</div>
+					</div>
+					<div class="performance_graph">
+						<svg class="performance_graph"></svg>
+					</div>
+					<div id="sample_size_wrapper">
+						Aggregate data every
+						<select id="data_granularity_input">
+							<option value="1">1 day</option>
+							<option value="3">3 days</option>
+							<option value="7">1 week</option>
+							<option value="14">2 weeks</option>
+							<option value="28">1 month</option>
+						</select>
+					</div>
+					<div id="timesscale_wrapper">
+						Collect data from
+						<select id="data_timescale_input">
+							<option value="7">1 week ago</option>
+							<option value="14">2 weeks ago</option>
+							<option value="28">4 weeks ago</option>
+							<option value="42">6 weeks ago</option>
+							<option value="56">8 weeks ago</option>
+							<option value="70">10 weeks ago</option>
+							<option value="84">12 weeks ago</option>
+						</select>
+					</div>
+					<div id="plot_data_button" onclick="drawPerformanceGraph()">Plot Data</div>
+				</div>
+				<div class="right_sidebar_tab_wrapper" data-tab-number="3" style="display:none;">
+					<div class="diagnosis_tab_container" data-survey-tab="1">
+						<label class="survey_info_label">Duration:</label>
+						<div id="survey_info_duration" class="survey_info_text">10/13/15 - Present</div>
+						<label class="survey_info_label">Progress:</label>
+						<div id="survey_info_progress" class="survey_info_text"><b>36</b> of <b>100</b> people</div>
+						<!-- <div id="survey_greeting_text">Hello valued guest we were wondering if you could answer to short questions for us about this foods to help us improve the products we offer</div> -->
+						<div id="survey_results_wrapper">
+
+							<label class="survey_results single_response question_type_label" ><i>Choose 1</i> Questions</label>
+							<ul class="survey_results single_response questions_list" data-question-type="1">
+								<li class="survey_results single_response question_li">
+                                    <p type="text" class="survey_results single_response question_text">Do you think the food is too expensive?</p>
+                                    <ul class="survey_results single_response answers_list" >
+                                        <li class="survey_results single_response answer_li" >
+                                           <p class="survey_results single_response answer_text" >Yes</p>
+                                           <p class="survey_results single_response answer_results"><b>18</b> of <b>78</b> people</p>
+                                        </li>
+                                        <li class="survey_results single_response answer_li" >
+                                           <p class="survey_results single_response answer_text" >No</p>
+                                           <p class="survey_results single_response answer_results"><b>60</b> of <b>78</b> people</p>
+                                        </li>
+                                    </ul>
+								</li>
+							</ul>
+
+							<label class="survey_results all_that_apply question_type_label"><i>Choose All that Apply</i> Questions</label>
+							<ul class="survey_results all_that_apply questions_list" data-question-type="2">
+								<li class="survey_results all_that_apply question_li">
+                                    <p type="text" class="survey_results all_that_apply question_text" >Which of the following improvements do you think could make the dish more appealing</p>
+                                    <ul class="survey_results all_that_apply answers_list" >
+                                        <li class="survey_results all_that_apply answer_li" >
+                                           <p  class="survey_results all_that_apply answer_text" />Served with 3 sides instead of 2</p>
+                                           <p class="survey_results all_that_apply answer_results"><b>59</b> of <b>78</b> people</p>
+                                        </li>
+                                        <li class="survey_results all_that_apply answer_li" >
+                                           <p  class="survey_results all_that_apply answer_text" />If the gravy were put on the side</p>
+                                           <p class="survey_results all_that_apply answer_results"><b>24</b> of <b>78</b> people</p>
+                                        </li>
+                                        <li class="survey_results all_that_apply answer_li" >
+                                           <p  class="survey_results all_that_apply answer_text" />If it did not come with anchovis</p>
+                                           <p class="survey_results all_that_apply answer_results"><b>35</b> of <b>78</b> people</p>
+                                        </li>
+                                    </ul>
+								</li>
+							</ul>
+
+							<label class="survey_results custom_response question_type_label" ><i>Custom Response</i> Questions</label>
+							<ul class="survey_results custom_response questions_list" data-question-type="3">
+								<li class="survey_results custom_response question_li">
+                                    <p type="text" class="survey_results custom_response question_text" >Please let us know any other thoughts you may have about how to improve this dish</p>
+							  	     <ul class="survey_results custom_response answers_list" >
+                                        <li class="survey_results custom_response answer_li">
+                                           <p  class="survey_results custom_response answer_results"  >$14 for a lasagna is rediculous!</p>
+                                        </li>
+                                        <li class="survey_results custom_response answer_li">
+                                           <p  class="survey_results custom_response answer_results"  >I'm typically a fan of lasagna the portion size looks pretty small for $14</p>
+                                        </li>
+                                    </ul>
+								</li>
+							</ul>
+							
+						</div>
+						<div class="right_sidebar_options_wrapper">
+							<ul class="right_sidebar_options_dd" data-container-type="food" style="display: none;">
+								<li class="right_sidebar_tab_li item" data-survey-tab="2" onclick="revealNewSurveyTab()">
+									Create Survey
+								</li>
+								<li class="right_sidebar_tab_li item cancel_survey" onclick="cancelFoodSurvey()" data-currently-surveying="True"><!--  this one can be available on both survey tabs but only on the history one if a survey is currently being conducted -->
+									Stop Survey
+								</li>
+							</ul>
+							<div class="right_sidebar_options_btn" data-container-type="food" onclick="displayOptionsMenu(this)">
+								Options
+							</div>
+						</div>
+					</div>
+					<div class="diagnosis_tab_container hide"  data-survey-tab="2">
+						<div id="survey_type_wrap" class="survey_wrapper">
+							<div id="survey_size_wrapper">
+								<label >Survey Size</label>
+								<select id="survey_size_select">
+									<option value="50">50 people</option>
+									<option value="100">100 people</option>
+									<option value="250">250 people</option>
+									<option value="500">500 people</option>
+									<option value="1000">1000 people</option>
+								</select>
+							</div>
+						</div>
+						<div id="questions_wrapper">
+							<label class="create_survey single_response question_type_label" ><i>Choose 1</i> Questions</label>
+							<ul class="create_survey single_response questions_list" data-question-type="1">
+								<li class="create_survey single_response question_li">
+                                    <input type="text" class="create_survey single_response question_input" value="Do you think this item is overpriced?"/>
+                                    <span class="remove_right_sidebar_li" onclick="deleteQuestionOrAnswer(this)">
+								   		<div class="forward slash"></div>
+								   		<div class="backward slash"></div>
+							  	    </span>
+                                    <ul class="create_survey single_response answers_list" data-question-type="1">
+                                        <li class="create_survey single_response answer_li" >
+                                           <input type="text" onkeydown="createNewAnswer(this)" class="create_survey single_response answer_input" data-question-type="1" value="yes"/>
+                                           <span class="remove_right_sidebar_li" onclick="deleteQuestionOrAnswer(this)">
+										   	   <div class="forward slash"></div>
+											   <div class="backward slash"></div>
+									   	   </span>
+                                        </li>
+                                        <li class="create_survey single_response answer_li" >
+                                           <input type="text" onkeydown="createNewAnswer(this)" class="create_survey single_response answer_input" data-question-type="1" value="no" />
+                                           <span class="remove_right_sidebar_li" onclick="deleteQuestionOrAnswer(this)">
+										   	   <div class="forward slash"></div>
+											   <div class="backward slash"></div>
+									   	   </span>
+                                        </li>
+                                    </ul>
+								</li>
+							</ul>
+							<div class="new_option_explanation">Press "Enter" inside textbox to create a new Answer</div>
+							<div class="new_feedback_questions" onclick="createNewFeedbackQuestion(this)" data-question-type="1">+ New Question</div>
+
+							<label class="create_survey all_that_apply question_type_label"><i>Choose All that Apply</i> Questions</label>
+							<ul class="create_survey all_that_apply questions_list" data-question-type="2">
+								<li class="create_survey all_that_apply question_li">
+                                    <input type="text" class="create_survey all_that_apply question_input" value="which, if any, of the following do you think could make this item more appealing?" />
+                                    <span class="remove_right_sidebar_li" onclick="deleteQuestionOrAnswer(this)">
+								   		<div class="forward slash"></div>
+								   		<div class="backward slash"></div>
+							  	    </span>
+                                    <ul class="create_survey all_that_apply answers_list" data-question-type="2">
+                                        <li class="create_survey all_that_apply answer_li" >
+                                           <input type="text" onkeydown="createNewAnswer(this)" class="create_survey all_that_apply answer_input" data-question-type="2" value="putting the sauce on the side" />
+                                           <span class="remove_right_sidebar_li" onclick="deleteQuestionOrAnswer(this)">
+										   	   <div class="forward slash"></div>
+											   <div class="backward slash"></div>
+									   	   </span>
+                                        </li>
+                                        <li class="create_survey all_that_apply answer_li" >
+                                           <input type="text" onkeydown="createNewAnswer(this)" class="create_survey all_that_apply answer_input" data-question-type="2" value="if it were served with 2 sides instead of 1" />
+                                           <span class="remove_right_sidebar_li" onclick="deleteQuestionOrAnswer(this)">
+										   	   <div class="forward slash"></div>
+											   <div class="backward slash"></div>
+									   	   </span>
+                                        </li>
+                                    </ul>
+								</li>
+							</ul>
+							<div class="new_option_explanation">Press "Enter" inside textbox to create a new Answer</div>
+							<div class="new_feedback_questions" onclick="createNewFeedbackQuestion(this)" data-question-type="2">+ New Question</div>
+
+							<label class="create_survey custom_response question_type_label" ><i>Custom Response</i> Questions</label>
+							<ul class="create_survey custom_response questions_list" data-question-type="3">
+								<li class="create_survey custom_response question_li">
+                                    <input type="text" class="create_survey custom_response question_input" value="if there are any other ways you think we could improve this produce please let us know." />
+                                    <span class="remove_right_sidebar_li" onclick="deleteQuestionOrAnswer(this)">
+								   		<div class="forward slash"></div>
+								   		<div class="backward slash"></div>
+							  	    </span>
+							  	     <ul class="create_survey custom_response answers_list" data-question-type="3">
+                                        
+                                    </ul>
+								</li>
+							</ul>
+							<div class="new_feedback_questions" onclick="createNewFeedbackQuestion(this)" data-question-type="3">+ New Question</div>
+
+						</div>
+						<div class="right_sidebar_options_wrapper">
+							<ul class="right_sidebar_options_dd" data-container-type="food" style="display: none;">
+								<li class="right_sidebar_tab_li item" onclick="createSurvey()">
+									Launch Survey
+								</li>
+								<li class="right_sidebar_tab_li item cancey_survey" data-survey-tab="1" onclick="hideNewSurveyTab()">
+									Cancel
+								</li>
+							</ul>
+							<div class="right_sidebar_options_btn" data-container-type="food" onclick="displayOptionsMenu(this)">
+								Options
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="category_content_wrapper" style="margin: 44px 350px 0px 220px;">
+			<ul id="category_content_list">
+				<!-- this is the list where the relevant food items will
+				be displayed -->
+			</ul>
+		</div>
+	</body>
+</html>

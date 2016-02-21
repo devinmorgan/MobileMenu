@@ -1,0 +1,52 @@
+/* ----------- survey results graphs start ----------- */
+
+.response.axis_elements{
+    stroke: rgb(120, 120, 120);
+    stroke-width: 2px;
+}
+.response.large_hash_path{
+    marker-start: url(#large_hash_marker);
+}
+.response.small_hash_path{
+    marker-start: url(#small_hash_marker);
+}
+.response.large_increment_label{
+    text-anchor:end;
+    font-size: 12px;
+}
+.response.grey_response_background {
+    fill: rgb(242, 242, 242);
+    stroke-dasharray: 80,50;
+    stroke-width: 0px;
+}
+.response.white_response_background{
+    fill: white;
+    stroke-dasharray: 80,50;
+    stroke-width: 0px;
+}
+.response.x_axis_line{
+    fill: black;
+    stroke: rgb(0,0,0); 
+                        stroke-width:2px;
+    marker-end: url(#large_hash_marker);
+    marker-start: url(#large_hash_marker);
+}
+.response.small_increment_line{
+    stroke: rgb(200, 200, 200);
+    stroke-width: 1px;
+}
+.response.large_increment_line{
+    stroke: rgb(120,120,120);
+    stroke-width: 1px;
+}
+.response.value_rect{
+    fill: rgb(210,246,246);
+    stroke-width: 1px;
+    stroke: rgb(102, 132, 191);
+}
+.response.value_text{
+    text-anchor:middle;
+}
+.reponse.left_border{
+    fill:rgb(120, 120, 120);
+}

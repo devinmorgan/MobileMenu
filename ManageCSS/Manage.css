@@ -1,0 +1,103 @@
+*{
+    margin: 0px;
+    text-decoration: none;
+    font-family: helvetica;
+    list-style-type: none;
+    padding: 0px;
+}
+body{
+    background-color: rgb(240, 240, 240);
+}
+input {
+    color: rgb(0,0,0);
+    font-size: 13px;
+    line-height: 20px;
+    padding: 0px 20px 0px 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+label,div{
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    -o-user-select: none; 
+    user-select: none;          /* Likely future */ 
+}
+li{
+    position: relative;
+}
+#layout_wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(240, 240, 240);
+    position: fixed;
+    top: 44px;
+    left: 0px;
+    overflow: scroll;
+}
+
+/* --------------------------------------------------------------------------------------------*/
+
+/*All attributes that have the highest priority go here (e.g. item selected)*/
+.drag_over{
+    border-top: 3px solid rgb(209, 72, 54);
+}
+.item{
+    border-left: 5px solid transparent;
+    padding:0px 0px 0px 30px;
+    line-height: 30px;
+}
+.item:hover{
+    border-left: 5px solid rgb(100,100,100);
+    background-color: rgb(200,200,200);
+    cursor: pointer;
+}
+.item_selected{
+    border-left: 5px solid rgb(209,72,54);
+}
+.item_selected span{
+    color: rgb(209,72,54);
+}
+.food_selected{
+    background-color: rgba(0, 149, 255, 0.52);
+}
+.food_selected .food_item_title{
+    color: rgb(245, 245, 245);
+}
+.food_selected span, .food_selected p{
+    color: white;
+    font-weight: 500;
+}
+
+.tab_selected{
+    border-bottom: 4px solid rgb(0,149,255);
+}
+.invalid_input{
+    border:  1px solid red;
+}
+.error_message{
+    color: red;
+}
+
+/* ------------- Mediq Queries ------------- */
+@media(max-width: 800px) {
+    #sidebar_menu_open_overlay{
+        position: fixed;
+        top: 44px;
+        left: 0px;
+        z-index: 1;
+        background-color: rgba(0,0,0,.7);
+        width: 100%;
+        height: 100%;
+    }
+}
+@media(min-width: 800px) {
+    .mobile{
+        display:  none !important;
+    }
+}
+
+
